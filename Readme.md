@@ -38,7 +38,7 @@ will be auto added "moule uno;" at begin of file. Like this:
 
 ## Installation
 
-Install [DlangAutoImport](https://packagecontrol.io/packages/DlangAutoModuleName) from Package Control.
+Install [DlangAutoModuleName](https://packagecontrol.io/packages/DlangAutoModuleName) from Package Control.
 
 Then add a keybinding of your choice for the `dlang_auto_module_name` command, by adding a line like this to your keybindings file:
 
