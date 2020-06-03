@@ -13,6 +13,20 @@ class DlangAutoModuleNameCommand( sublime_plugin.TextCommand ):
         if regions:
             return regions[ 0 ].b
 
+
+    def _get_module_name_from_file_name( self ):
+        # file_name
+        import os.path 
+
+        abs_name = self.view.file_name()
+        if abs_name:
+        	file_name = os.path.basename( abs_name )
+
+        	if file_name:
+        		( name, ext ) = os.path.splitext( file_name )
+        		return name
+
+
     def _get_module_name_from_class( self ):
         # grep "class ..."
         extracts = []
@@ -41,6 +55,10 @@ class DlangAutoModuleNameCommand( sublime_plugin.TextCommand ):
 
 
     def _get_module_name( self ):
+        name = self._get_module_name_from_file_name()
+        if name:
+            return name
+
         name = self._get_module_name_from_class()
         if name:
             return name
