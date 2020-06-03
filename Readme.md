@@ -32,9 +32,11 @@ will be auto added "moule uno;" at begin of file. Like this:
 ## Algo
 - Check file for "module ..."
 - Get name from file_name
-- Grep file for "class Name"
-- Grep file for "interface Name"
-- Grep file for "struct Name"
+- - like a: project/source/ui/sys/device.d -> module ui.sys.device;
+- Get name from "class Name"
+- Get name from "interface Name"
+- Get name from "struct Name"
+- Get name from "enum Name"
 - Insert "module name;"
 
 ## Installation
