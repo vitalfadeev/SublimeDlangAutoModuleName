@@ -31,6 +31,7 @@ will be auto added "moule uno;" at begin of file. Like this:
 
 ## Algo
 - Check file for "module ..."
+- Get name from file_name
 - Grep file for "class Name"
 - Grep file for "interface Name"
 - Grep file for "struct Name"
