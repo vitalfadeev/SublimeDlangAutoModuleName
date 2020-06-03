@@ -1,6 +1,6 @@
 [
     {
-        "caption": "Dlang: auto-module-name",
+        "caption": "Dlang: module ...",
         "mnemonic": "a",
         "command": "dlang_auto_module_name",
         // the below doesn't actually do anything sadly, hopefully this will get added at some point

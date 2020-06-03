@@ -47,5 +47,5 @@ Then add a keybinding of your choice for the `dlang_auto_module_name` command, b
 { "keys": ["ctrl+shift+a"], "command": "dlang_auto_module_name" },
 ```
 
-You can also try it out immediately by choosing "Dlang: auto-module-name" from the context menu or command pallete.
+You can also try it out immediately by choosing "Dlang: module ..." from the context menu or command pallete.
 
