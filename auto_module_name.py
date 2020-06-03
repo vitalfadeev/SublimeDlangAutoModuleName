@@ -6,6 +6,10 @@ from Default import history_list
 
 
 class DlangAutoModuleNameCommand( sublime_plugin.TextCommand ):
+    def is_visible( self ):
+        return "/D/" in self.view.settings().get( "syntax" )
+
+
     def _check_exists( self, edit ):
         # check "module ..."
         regions = self.view.find_all( r"^module\s.*" )
