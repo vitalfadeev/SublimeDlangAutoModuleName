@@ -18,17 +18,34 @@ class DlangAutoModuleNameCommand( sublime_plugin.TextCommand ):
             return regions[ 0 ].b
 
 
+    def _get_module_name_from_abs_path( self, abs_path ):
+        import os.path
+
+        # remove ext
+        abs_path, ext = os.path.splitext( abs_path )
+
+        # trim.  project/source/ui/event to ui/event
+        folders = []
+        folder_path, folder = os.path.split( abs_path )
+
+        while ( folder_path and folder ):
+            if folder == "source" or folder == "src":
+                break
+
+            folders.insert( 0, folder )
+            folder_path, folder = os.path.split( folder_path )
+
+        return ".".join( folders )
+
+
     def _get_module_name_from_file_name( self ):
         # file_name
         import os.path 
 
         abs_name = self.view.file_name()
         if abs_name:
-        	file_name = os.path.basename( abs_name )
-
-        	if file_name:
-        		( name, ext ) = os.path.splitext( file_name )
-        		return name
+            name = self._get_module_name_from_abs_path( abs_name )
+            return name
 
 
     def _get_module_name_from_class( self ):
@@ -111,3 +128,4 @@ class DlangAutoModuleNameCommand( sublime_plugin.TextCommand ):
             # Select inserted
             if inserted is not None:
                 self._select( inserted )
+
