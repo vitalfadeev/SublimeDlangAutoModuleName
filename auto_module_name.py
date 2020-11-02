@@ -7,7 +7,7 @@ from Default import history_list
 
 class DlangAutoModuleNameCommand( sublime_plugin.TextCommand ):
     def is_visible( self ):
-        return "/D/" in self.view.settings().get( "syntax" )
+        return self.view.match_selector( 0, "source.d" )
 
 
     def _check_exists( self, edit ):
